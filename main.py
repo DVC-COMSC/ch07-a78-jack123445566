@@ -3,14 +3,18 @@ words = ['are', 'arrow', 'amore', 'aspire', 'assertive', 'arrogant', 'bartender'
 # Create an empty list to store the result
 result = []
 
+# Define the list of letters to search for
+letters = ['a', 'r', 'e']
+
 # Iterate over each word in the list
 for word in words:
-  # Use the find() method to search for the substring 'are' in the word
-  index = word.find('are')
+  # Create a list of the indices of the letters in the word
+  indices = [word.find(letter) for letter in letters]
   
-  # If the find() method returns a non-negative value, it means that the substring was found
-  # in the word, so we can add the word to the result list
-  if index >= 0:
+  # Check if the indices are in ascending order
+  if indices == sorted(indices):
+    # If the indices are in ascending order, it means that the word contains
+    # the letters in the correct sequence, so we can add it to the result list
     result.append(word)
 
 # Print the result
